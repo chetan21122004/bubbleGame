@@ -2,31 +2,26 @@
 
 var no ,num; // var for timer
 
-num = 3;
+num = 60;
 no=num;
 
-function restrt() {
+   function start() {
     
-    // its responsible for start button 
-    
+       // its responsible for start button 
+       
     var strt = document.querySelector(".start");
     strt.addEventListener("click", function () {
-        
-    setTimeout(() => {
-        console.log(ree);
-        ree.style.display = "inline-block" 
-        // ree.addEventListener("click", function () {
-        //     restrt();
-        // })
-    },(num+1)*1000);
+        // restart();
+       
         strt.style.display = "none";
         setTimeout( timer, 10);
-    //    timer()
         rngola();
+        rnhit();
     });
     
     // ends here
-    
+} 
+    start();
     
     
     
@@ -65,6 +60,7 @@ function restrt() {
     
     
     var dashscr = document.querySelector(".dashscr");
+    
     function timer() {
         var intrvl = setInterval(function () {
             if (no > 0) {
@@ -73,27 +69,20 @@ function restrt() {
     } else if (no === 0) {
         clearInterval(intrvl);
         
-        
+        dashscr.innerHTML = `${scor}`
         // here is a intresting part i am writing html code in  it cant be
         //shown in html code . it will work same as we write in html file
         
-        document.querySelector(".p-botm").innerHTML = ` <div class="over">
-        <h2>Game over !</h2>
-        <div class="ovrscore over">
-        <h3>Your Score is:</h3>
-        <h1 class="dashscr">${scor}</h1>
-        
-        </div> 
-        </div>`;
+        document.querySelector(".p-botm").style.display = "none";
+        document.querySelector(".p-afbotm").style.display = "block";
 
 
     
     }
-        scoreinc()
 }, 1000);
-
-
-
+scoreinc()
+// return timer;
+   
 }
 
 
@@ -125,9 +114,11 @@ function scoreinc() {
            //here we change color of scr if its less than 0 
            if (Number(realscor.textContent) < 0) {
                realscor.style.color = "red";
+               dashscr.style.color = "red";
                
            } else {
                realscor.style.color = " rgb(5, 158, 35)";
+               dashscr.style.color = " rgb(5, 158, 35)";
            }
            //ends here scr color changer 
 
@@ -146,21 +137,41 @@ function scoreinc() {
    },no*1000);
 
    }
+    
 
-}
+   
+   
+   
+   
+//    function restrt() {
+       
+    
+//     var ree = document.querySelector(".restart");
+    
+//     ree.addEventListener("click", function () {
+//         setInterval(() => {
+    
+//             if (no===0) {
+//               setTimeout(() => {
+//                 no=num+1
+//             }, 1000);  
+//             }
+//         }, 1000);
+//         // restrt()
+//         document.querySelector(".p-botm").style.display = "flex";
+//         document.querySelector(".p-afbotm").style.display = "none";
+        
+//         setTimeout( timer, 10);
+//         rngola();
+//         rnhit();
+//         })
+// }
+// restrt();
 
-restrt();
-
-var ree = document.querySelector(".restart");
-
-  
 
 
 
-    // setTimeout(() => {
-    //     console.log(ree);
-    //     ree.style.display = "block" 
-    //     // ree.addEventListener("click", function () {
-    //     //     restrt();
-    //     // })
-    // },(num)*1000);
+
+
+
+//   // Call functionB to execute both functionA and functionB
