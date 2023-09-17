@@ -66,13 +66,13 @@ html,body,.main{
 }
 
 .start, .restart{
-    background-color: #dfdddd;
+    background-color: #a3f0f0;
     padding: 10px;
     border-radius: 20px;
     font-size: 11vh;
     width: 250px;
-    border: 4px solid black;
-    -webkit-text-stroke: 2px black;
+    border: 3px solid black;
+    -webkit-text-stroke: 2px  rgb(9, 9, 9);
     height: 50px;
     display: flex;
     position: relative;
@@ -80,7 +80,7 @@ html,body,.main{
     align-items: center;
     justify-content: center;
     font-weight: 200;
-    color: #04f19a;
+    color: #ee3f48;
 }
 .restart{
 width: 280px;

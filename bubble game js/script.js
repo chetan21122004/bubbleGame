@@ -1,15 +1,27 @@
 
 
-var no ,num; // var for timer
 
-num = 60;
-no=num;
+
+
+
+var afpbtm   = document.querySelector(".p-afbotm");
+var pbtm     = document.querySelector(".p-botm"  );
+var dashscr  = document.querySelector(".dashscr" );
+var realscor = document.querySelector(".score"   );
+var gol      = document.querySelector(".gol"     );
+var strt     = document.querySelector(".start"   );
+var ree      = document.querySelector(".restart" );
+// var timer    = document.querySelector("#timer"   );
+var num      = 60;
+var rlscor   = 0; 
+    // Initialize game variables and state
+    // ...
+    
 
    function start() {
     
        // its responsible for start button 
        
-    var strt = document.querySelector(".start");
     strt.addEventListener("click", function () {
         // restart();
        
@@ -37,7 +49,6 @@ no=num;
         
         document.querySelector(".p-botm").innerHTML = gola;
         
-        var gol = document.querySelector(".gol");
         
         
         
@@ -59,9 +70,12 @@ no=num;
     
     
     
-    var dashscr = document.querySelector(".dashscr");
     
     function timer() {
+        var no = num;
+        var scor = rlscor;
+       document.querySelector(".timer").textContent = "1min";
+
         var intrvl = setInterval(function () {
             if (no > 0) {
        no--;
@@ -69,7 +83,6 @@ no=num;
     } else if (no === 0) {
         clearInterval(intrvl);
         
-        dashscr.innerHTML = `${scor}`
         // here is a intresting part i am writing html code in  it cant be
         //shown in html code . it will work same as we write in html file
         
@@ -86,9 +99,9 @@ scoreinc()
 }
 
 
-var scor = 0; //var for score
-var realscor = document.querySelector(".score");
 function scoreinc() {
+    var no = num+2;
+    var scor = rlscor; //var for score
        function prblm(dets) {
            var numclick = Number(dets.target.textContent);
            
@@ -101,24 +114,27 @@ function scoreinc() {
            scor -= 5;
          realscor.textContent = scor;
            }
-
+           
            // ends here for inc score
-
-       
-
-              // this called func will change num after every click 
-              rnhit();
-              rngola();
-              // eds here 
-
+           
+           
+           
+           // this called func will change num after every click 
+           rnhit();
+           rngola();
+           // eds here 
+           
            //here we change color of scr if its less than 0 
            if (Number(realscor.textContent) < 0) {
+               dashscr.innerHTML = `${scor}`
                realscor.style.color = "red";
                dashscr.style.color = "red";
                
            } else {
                realscor.style.color = " rgb(5, 158, 35)";
                dashscr.style.color = " rgb(5, 158, 35)";
+               dashscr.innerHTML = `+${scor}`
+
            }
            //ends here scr color changer 
 
@@ -132,46 +148,34 @@ function scoreinc() {
    setTimeout(function() {
        //here i learn about removeEventListener thats very 
        //useful i love it hee solves biggest prblm , not inc score after <0sec
-       document.querySelector(".p-botm").removeEventListener('click', prblm);
+       pbtm.removeEventListener('click', prblm);
 
    },no*1000);
 
    }
     
 
-   
-   
-   
-   
-//    function restrt() {
-       
+    // Start game logic
+
+
+function restartGame() {
+    // Reset game variables and state
+    afpbtm.style.display = "none";
+    pbtm.style.display = "flex";
+    realscor.textContent = 0;
+    var no = num;
+    var scor = 0;
+    console.log(no,scor);
+    setTimeout( timer, 10);
+    rngola();
+    rnhit();
     
-//     var ree = document.querySelector(".restart");
-    
-//     ree.addEventListener("click", function () {
-//         setInterval(() => {
-    
-//             if (no===0) {
-//               setTimeout(() => {
-//                 no=num+1
-//             }, 1000);  
-//             }
-//         }, 1000);
-//         // restrt()
-//         document.querySelector(".p-botm").style.display = "flex";
-//         document.querySelector(".p-afbotm").style.display = "none";
-        
-//         setTimeout( timer, 10);
-//         rngola();
-//         rnhit();
-//         })
-// }
-// restrt();
+    // ...
+    // Start the game again
+}
 
+// Call startGame to initiate the game initially
 
-
-
-
-
-
-//   // Call functionB to execute both functionA and functionB
+// You can later call restartGame to restart the game
+// For example, when a "Restart" button is clicked
+ree.addEventListener("click", restartGame);
