@@ -1,0 +1,45 @@
+.main{
+    background-color: #444444;
+  }
+  .panel{
+    border: 1px solid whitesmoke;
+
+  }
+  .p-top{
+    background-color: rgb(34, 33, 33);
+    border-bottom: 2px solid whitesmoke;
+  }
+  .p-dash{
+    color: #3b3b3b;
+  }
+
+  .p-botm,.p-afbotm,.panel{
+    background-color: rgb(106, 105, 105);
+  }
+
+  .start,.restart{
+    background-color: rgb(46, 43, 43);
+    color: rgb(69, 68, 68);
+    -webkit-text-stroke: 2px  rgb(250, 250, 250);
+    border: 1px solid whitesmoke;
+    
+  }
+  .gol{
+    background-color: rgb(34, 33, 33);
+    border: 1px solid whitesmoke;
+    
+  }
+  .gol:hover{
+    background-color: rgb(73, 70, 70);
+    
+  }
+  .over h2{
+    color: #3b3b3b;
+    -webkit-text-stroke: 2px  rgb(250, 250, 250);
+    
+  }
+  .over h3{
+    -webkit-text-stroke: 2px  rgb(250, 250, 250);
+    color: #3d3d3d;
+    
+  }
