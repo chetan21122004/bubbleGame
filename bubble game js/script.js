@@ -13,6 +13,8 @@ function game() {
     var strt     = document.querySelector(".start"   );
     var ree      = document.querySelector(".restart" );
     var time     = document.querySelector("#timer"   );
+    // hey coder if u want to increase time to 60 sec
+    //just write var num = 60 
     var num      = 16;
     var rlscor   = 0; 
     // Initialize game variables and state
